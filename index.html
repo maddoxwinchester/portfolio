@@ -3,444 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<title>Maddox Winchester — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pink: #ED93B1;
-    --pink-light: #FBEAF0;
-    --pink-dark: #4B1528;
-    --teal: #1D9E75;
-    --teal-light: #E1F5EE;
-    --amber: #EF9F27;
-    --amber-light: #FAEEDA;
-    --purple: #7F77DD;
-    --purple-light: #EEEDFE;
-    --coral: #D85A30;
-    --coral-light: #FAECE7;
-    --blue: #378ADD;
-    --blue-light: #E6F1FB;
-    --green: #639922;
-    --green-light: #EAF3DE;
-    --bg: #FFFDF9;
-    --text: #1a1a1a;
-    --muted: #5F5E5A;
+    --pink: #ED93B1; --pink-light: #FBEAF0; --pink-dark: #4B1528;
+    --teal: #1D9E75; --teal-light: #E1F5EE;
+    --amber: #EF9F27; --amber-light: #FAEEDA;
+    --purple: #7F77DD; --purple-light: #EEEDFE;
+    --coral: #D85A30; --coral-light: #FAECE7;
+    --blue: #378ADD; --blue-light: #E6F1FB;
+    --green: #639922; --green-light: #EAF3DE;
+    --bg: #FFFDF9; --text: #1a1a1a; --muted: #5F5E5A;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    background: rgba(255,253,249,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .nav-logo {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--pink), var(--purple), var(--teal));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; background: rgba(255,253,249,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, var(--pink), var(--purple), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--text); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 7rem 3rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-blobs {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.25;
-  }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 3rem 4rem; position: relative; overflow: hidden; }
+  .hero-blobs { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; }
   .blob-1 { width: 500px; height: 500px; background: var(--pink); top: -100px; right: -100px; animation: float 8s ease-in-out infinite; }
   .blob-2 { width: 400px; height: 400px; background: var(--teal); bottom: -50px; left: -80px; animation: float 10s ease-in-out infinite reverse; }
   .blob-3 { width: 300px; height: 300px; background: var(--amber); top: 40%; left: 40%; animation: float 7s ease-in-out infinite 2s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.05); }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-  }
-  .hero-tag {
-    display: inline-block;
-    background: var(--purple-light);
-    color: var(--purple);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease both;
-  }
-  .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease 0.1s both;
-  }
-  .hero h1 .highlight {
-    font-style: italic;
-    color: var(--pink);
-  }
+  @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .hero-tag { display: inline-block; background: var(--purple-light); color: var(--purple); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both; }
+  .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease 0.1s both; }
+  .hero h1 .highlight { font-style: italic; color: var(--pink); }
   .hero h1 .highlight-2 { color: var(--teal); }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 500px;
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s ease 0.2s both;
-  }
-  .hero-btns {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.6s ease 0.3s both;
-  }
-  .btn-primary {
-    background: var(--text);
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.7; max-width: 500px; margin-bottom: 2.5rem; animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s ease 0.3s both; }
+  .btn-primary { background: var(--text); color: white; padding: 0.8rem 2rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-  .btn-secondary {
-    background: transparent;
-    color: var(--text);
-    padding: 0.8rem 2rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1.5px solid rgba(0,0,0,0.15);
-    transition: border-color 0.2s, background 0.2s;
-  }
+  .btn-secondary { background: transparent; color: var(--text); padding: 0.8rem 2rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1.5px solid rgba(0,0,0,0.15); transition: border-color 0.2s, background 0.2s; }
   .btn-secondary:hover { border-color: var(--text); background: rgba(0,0,0,0.03); }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: fadeUp 1s ease 0.8s both;
-  }
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--muted), transparent);
-    animation: scrollLine 1.5s ease-in-out infinite;
-  }
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* STATS STRIP */
-  .stats {
-    background: var(--text);
-    color: white;
-    padding: 2rem 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-  }
+  .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; animation: fadeUp 1s ease 0.8s both; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--muted), transparent); animation: scrollLine 1.5s ease-in-out infinite; }
+  @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .stats { background: var(--text); color: white; padding: 2rem 3rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
   .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; line-height: 1; margin-bottom: 0.25rem; }
   .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
-
-  /* SECTION SHARED */
   section { padding: 6rem 3rem; }
-  .section-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-  }
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    margin-bottom: 3rem;
-    line-height: 1.15;
-  }
-
-  /* ABOUT */
-  .about {
-    background: white;
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .about-visual {
-    position: relative;
-    height: 420px;
-  }
-  .about-card {
-    position: absolute;
-    background: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.1);
-  }
-  .about-card-main {
-    width: 260px;
-    top: 0; left: 20px;
-    background: var(--purple-light);
-  }
+  .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 999px; }
+  .section-title { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 3rem; line-height: 1.15; }
+  .about { background: white; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .about-visual { position: relative; height: 420px; }
+  .about-card { position: absolute; background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 4px 40px rgba(0,0,0,0.1); }
+  .about-card-main { width: 260px; top: 0; left: 20px; background: var(--purple-light); }
   .about-card-main .card-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
   .about-card-main h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 900; color: var(--purple); }
   .about-card-main p { font-size: 0.85rem; color: #7F77DD; margin-top: 0.25rem; line-height: 1.5; }
-  .about-card-2 {
-    width: 200px;
-    bottom: 60px; right: 0;
-    background: var(--teal-light);
-  }
+  .about-card-2 { width: 200px; bottom: 60px; right: 0; background: var(--teal-light); }
   .about-card-2 .card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
   .about-card-2 h3 { font-size: 1rem; font-weight: 600; color: var(--teal); }
   .about-card-2 p { font-size: 0.8rem; color: #0F6E56; margin-top: 0.2rem; }
-  .about-card-3 {
-    width: 180px;
-    bottom: 0; left: 0;
-    background: var(--amber-light);
-  }
+  .about-card-3 { width: 180px; bottom: 0; left: 0; background: var(--amber-light); }
   .about-card-3 .card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
   .about-card-3 h3 { font-size: 0.95rem; font-weight: 600; color: var(--coral); }
   .about-card-3 p { font-size: 0.78rem; color: #BA7517; margin-top: 0.2rem; }
-  .about-text p {
-    font-size: 1.05rem;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
-  }
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-  .skill-chip {
-    padding: 0.35rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-
-  /* ACHIEVEMENTS */
+  .about-text p { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.25rem; }
+  .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .skill-chip { padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; }
   .achievements { background: var(--bg); }
   .achievements-inner { max-width: 1100px; margin: 0 auto; }
-  .achieve-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  .achieve-card {
-    border-radius: 20px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    cursor: default;
-  }
+  .achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .achieve-card { border-radius: 20px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; cursor: default; }
   .achieve-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
-  .achieve-card::before {
-    content: '';
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    opacity: 0.15;
-    background: currentColor;
-  }
+  .achieve-card::before { content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; opacity: 0.15; background: currentColor; }
   .achieve-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-  .achieve-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    opacity: 0.7;
-  }
+  .achieve-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.7; }
   .achieve-title { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; margin-bottom: 0.5rem; line-height: 1.2; }
   .achieve-desc { font-size: 0.88rem; line-height: 1.6; opacity: 0.75; }
-  .achieve-year {
-    position: absolute;
-    bottom: 1.5rem; right: 1.75rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    opacity: 0.5;
-  }
-
-  /* CLASSES */
+  .achieve-year { position: absolute; bottom: 1.5rem; right: 1.75rem; font-size: 0.75rem; font-weight: 700; opacity: 0.5; }
   .classes { background: white; }
   .classes-inner { max-width: 1100px; margin: 0 auto; }
-  .class-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-  .class-card {
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1.5px solid rgba(0,0,0,0.07);
-    background: white;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .class-card { padding: 1.5rem; border-radius: 16px; border: 1.5px solid rgba(0,0,0,0.07); background: white; transition: border-color 0.2s, transform 0.2s; }
   .class-card:hover { border-color: rgba(0,0,0,0.15); transform: translateY(-3px); }
-  .class-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
+  .class-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 1rem; }
   .class-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
   .class-type { font-size: 0.78rem; color: var(--muted); }
-
-  /* TIMELINE */
   .timeline-section { background: var(--bg); }
   .timeline-inner { max-width: 800px; margin: 0 auto; }
   .timeline { position: relative; padding-left: 2rem; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 8px; bottom: 8px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--pink), var(--purple), var(--teal));
-    border-radius: 2px;
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 2.5rem;
-    padding-left: 1.5rem;
-  }
-  .timeline-dot {
-    position: absolute;
-    left: -2.35rem;
-    top: 6px;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px currentColor;
-  }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--pink), var(--purple), var(--teal)); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem; }
+  .timeline-dot { position: absolute; left: -2.35rem; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px currentColor; }
   .timeline-year { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
   .timeline-event { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
   .timeline-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-
-  /* FOOTER */
-  footer {
-    background: var(--text);
-    color: white;
-    padding: 3rem;
-    text-align: center;
-  }
+  footer { background: var(--text); color: white; padding: 3rem; text-align: center; }
   footer .footer-name { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem; }
   footer p { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
-  footer .footer-tag {
-    display: inline-block;
-    margin-top: 1.5rem;
-    background: rgba(255,255,255,0.08);
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 6rem 1.5rem 4rem; }
-    section { padding: 4rem 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-visual { height: 300px; display: none; }
-    .stats { gap: 2rem; padding: 2rem 1.5rem; }
-  }
+  footer .footer-tag { display: inline-block; margin-top: 1.5rem; background: rgba(255,255,255,0.08); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+  @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .hero { padding: 6rem 1.5rem 4rem; } section { padding: 4rem 1.5rem; } .about-grid { grid-template-columns: 1fr; } .about-visual { display: none; } .stats { gap: 2rem; padding: 2rem 1.5rem; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Your Name</div>
+  <div class="nav-logo">Maddox Winchester</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#achievements">Achievements</a></li>
@@ -457,43 +127,40 @@
     <div class="blob blob-3"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">✦ Class of 2026</div>
+    <div class="hero-tag">✦ Sprayberry STEM · Class of '26</div>
     <h1>
-      Curious.<br>
+      Techy.<br>
       <span class="highlight">Creative.</span><br>
-      <span class="highlight-2">STEM-driven.</span>
+      <span class="highlight-2">Curious.</span>
     </h1>
     <p class="hero-sub">
-      A passionate high school student exploring the intersections of science, technology, engineering, and math — building projects, winning competitions, and chasing big ideas.
+      My name is Robert Winchester, but I go by Maddox. I've been passionate about computer science and technology for most of my life, and I'm proud to be part of the Sprayberry STEM program — heading to KSU for Computer Engineering.
     </p>
     <div class="hero-btns">
       <a href="#achievements" class="btn-primary">See My Work</a>
       <a href="#about" class="btn-secondary">About Me</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- STATS STRIP -->
+<!-- STATS -->
 <div class="stats">
   <div class="stat">
-    <div class="stat-num" style="color: #ED93B1;">4.0</div>
+    <div class="stat-num" style="color: #ED93B1;">3.8</div>
     <div class="stat-label">GPA</div>
   </div>
   <div class="stat">
-    <div class="stat-num" style="color: #5DCAA5;">6+</div>
+    <div class="stat-num" style="color: #5DCAA5;">10+</div>
     <div class="stat-label">AP Courses</div>
   </div>
   <div class="stat">
-    <div class="stat-num" style="color: #EF9F27;">12+</div>
-    <div class="stat-label">Awards & Honors</div>
+    <div class="stat-num" style="color: #EF9F27;">KSU</div>
+    <div class="stat-label">College Bound</div>
   </div>
   <div class="stat">
-    <div class="stat-num" style="color: #AFA9EC;">3</div>
-    <div class="stat-label">Years in STEM Club</div>
+    <div class="stat-num" style="color: #AFA9EC;">Comp E</div>
+    <div class="stat-label">Major</div>
   </div>
 </div>
 
@@ -502,37 +169,33 @@
   <div class="about-grid">
     <div class="about-visual">
       <div class="about-card about-card-main">
-        <div class="card-icon">🔬</div>
-        <h3>Science & Research</h3>
-        <p>Passionate about biology, chemistry, and experimental design. Love turning curiosity into findings.</p>
+        <div class="card-icon">💻</div>
+        <h3>Computer Engineering</h3>
+        <p>Passionate about tech and CS — heading to KSU to turn that passion into a career.</p>
       </div>
       <div class="about-card about-card-2">
-        <div class="card-icon">💻</div>
-        <h3>Coding & Tech</h3>
-        <p>Python, web development, and app building.</p>
+        <div class="card-icon">🔧</div>
+        <h3>Hands-on Builder</h3>
+        <p>From design competitions to car wraps — I love making things.</p>
       </div>
       <div class="about-card about-card-3">
-        <div class="card-icon">🏆</div>
-        <h3>Competition Ready</h3>
-        <p>Science Olympiad, Math League & more.</p>
+        <div class="card-icon">🚀</div>
+        <h3>STEM & TSA</h3>
+        <p>Sprayberry STEM · TSA member.</p>
       </div>
     </div>
     <div class="about-text">
       <div class="section-tag" style="background: var(--pink-light); color: #D4537E;">About Me</div>
-      <h2 class="section-title">Hi, I'm <em style="color: var(--pink); font-style: italic;">Your Name</em> 👋</h2>
-      <p>
-        I'm a high school junior with a deep love for STEM. Whether it's dissecting a complex biology problem, coding a new project, or competing in Science Olympiad, I'm always looking for the next challenge.
-      </p>
-      <p>
-        Outside of academics, I enjoy tutoring peers, volunteering in my community, and exploring how technology can solve real-world problems.
-      </p>
+      <h2 class="section-title">Hi, I'm <em style="color: var(--pink); font-style: italic;">Maddox</em> 👋</h2>
+      <p>My name is Robert Winchester, but I go by Maddox. I've been drawn to computers and technology for as long as I can remember, and that curiosity led me to Sprayberry's STEM program, where I've been able to explore engineering, design, and computer science in a hands-on environment.</p>
+      <p>Outside the classroom, I've toured tech companies with my cousin Allison — who has worked at places like Microsoft — getting a real look at what careers in technology look like from the inside. I've also worked summers at my dad's design shop, picking up skills in car wrapping, signage, and running a creative business. I'm currently a member of TSA and the National Honor Society, and I'm headed to Kennesaw State University to study Computer Engineering.</p>
       <div class="skills-list">
-        <span class="skill-chip" style="background: var(--purple-light); color: #534AB7;">Python</span>
-        <span class="skill-chip" style="background: var(--teal-light); color: var(--teal);">Biology</span>
-        <span class="skill-chip" style="background: var(--amber-light); color: #854F0B;">Math</span>
-        <span class="skill-chip" style="background: var(--pink-light); color: #993556;">Chemistry</span>
-        <span class="skill-chip" style="background: var(--blue-light); color: #185FA5;">Data Analysis</span>
-        <span class="skill-chip" style="background: var(--green-light); color: #3B6D11;">Research</span>
+        <span class="skill-chip" style="background: var(--purple-light); color: #534AB7;">Computer Engineering</span>
+        <span class="skill-chip" style="background: var(--teal-light); color: var(--teal);">Technology</span>
+        <span class="skill-chip" style="background: var(--amber-light); color: #854F0B;">Design</span>
+        <span class="skill-chip" style="background: var(--pink-light); color: #993556;">Problem Solving</span>
+        <span class="skill-chip" style="background: var(--blue-light); color: #185FA5;">STEM</span>
+        <span class="skill-chip" style="background: var(--green-light); color: #3B6D11;">TSA</span>
         <span class="skill-chip" style="background: var(--coral-light); color: #993C1D;">Engineering</span>
       </div>
     </div>
@@ -546,52 +209,58 @@
     <h2 class="section-title">Achievements &<br><em style="color: var(--amber);">Accomplishments</em></h2>
     <div class="achieve-grid">
 
+      <!-- ✏️ ACHIEVEMENT 1 -->
       <div class="achieve-card" style="background: var(--purple-light); color: var(--purple);">
-        <div class="achieve-icon">🥇</div>
-        <div class="achieve-label">Science Olympiad</div>
-        <div class="achieve-title">Regional Champion — Chemistry Lab</div>
-        <div class="achieve-desc">Led the team to 1st place in the regional chemistry lab event, advancing to state competition.</div>
+        <div class="achieve-icon">🏆</div>
+        <div class="achieve-label">Academic Honor</div>
+        <div class="achieve-title">AP Scholar</div>
+        <div class="achieve-desc">Earned the AP Scholar distinction by passing multiple AP exams — recognizing outstanding academic achievement across subjects.</div>
         <div class="achieve-year">2024</div>
       </div>
 
+      <!-- ✏️ ACHIEVEMENT 2 -->
       <div class="achieve-card" style="background: var(--teal-light); color: var(--teal);">
-        <div class="achieve-icon">📊</div>
-        <div class="achieve-label">Research Project</div>
-        <div class="achieve-title">Science Fair — 2nd Place</div>
-        <div class="achieve-desc">Researched microplastic pollution in local water sources and presented findings to a panel of judges.</div>
-        <div class="achieve-year">2024</div>
-      </div>
-
-      <div class="achieve-card" style="background: var(--pink-light); color: var(--pink);">
-        <div class="achieve-icon">🧮</div>
-        <div class="achieve-label">Math League</div>
-        <div class="achieve-title">Top 10 Scorer — County Level</div>
-        <div class="achieve-desc">Ranked in the top 10 across all county high schools in the annual Math League competition.</div>
-        <div class="achieve-year">2023</div>
-      </div>
-
-      <div class="achieve-card" style="background: var(--amber-light); color: var(--coral);">
-        <div class="achieve-icon">💡</div>
-        <div class="achieve-label">STEM Club</div>
-        <div class="achieve-title">President & Founder</div>
-        <div class="achieve-desc">Founded the school's first robotics-focused STEM club with 30+ members and organized 3 community events.</div>
-        <div class="achieve-year">2023–Now</div>
-      </div>
-
-      <div class="achieve-card" style="background: var(--blue-light); color: var(--blue);">
-        <div class="achieve-icon">🖥️</div>
-        <div class="achieve-label">Coding</div>
-        <div class="achieve-title">Built a School Resource App</div>
-        <div class="achieve-desc">Developed a Python/web app that helps students find tutoring resources — used by 150+ students.</div>
-        <div class="achieve-year">2024</div>
-      </div>
-
-      <div class="achieve-card" style="background: var(--green-light); color: var(--green);">
         <div class="achieve-icon">📚</div>
         <div class="achieve-label">Academic</div>
         <div class="achieve-title">National Honor Society</div>
-        <div class="achieve-desc">Inducted into NHS for academic excellence, leadership, service, and character.</div>
-        <div class="achieve-year">2023</div>
+        <div class="achieve-desc">Inducted into NHS for academic excellence, leadership, service, and strong character throughout high school.</div>
+        <div class="achieve-year">2024</div>
+      </div>
+
+      <!-- ✏️ ACHIEVEMENT 3 -->
+      <div class="achieve-card" style="background: var(--pink-light); color: var(--pink);">
+        <div class="achieve-icon">💰</div>
+        <div class="achieve-label">Scholarship</div>
+        <div class="achieve-title">HOPE Scholarship</div>
+        <div class="achieve-desc">Qualified for the HOPE Scholarship — awarded to Georgia students who demonstrate strong academic achievement.</div>
+        <div class="achieve-year">2025</div>
+      </div>
+
+      <!-- ✏️ ACHIEVEMENT 4 -->
+      <div class="achieve-card" style="background: var(--amber-light); color: var(--coral);">
+        <div class="achieve-icon">🏗️</div>
+        <div class="achieve-label">STEM Competition</div>
+        <div class="achieve-title">Design & Build — Garage Challenge</div>
+        <div class="achieve-desc">Competed in two design and build challenges — constructing a garage for an unknown vehicle with limited time and resources, and a second build project junior year.</div>
+        <div class="achieve-year">2023–25</div>
+      </div>
+
+      <!-- ✏️ ACHIEVEMENT 5 -->
+      <div class="achieve-card" style="background: var(--blue-light); color: var(--blue);">
+        <div class="achieve-icon">🎃</div>
+        <div class="achieve-label">Community</div>
+        <div class="achieve-title">Trunk or Treat</div>
+        <div class="achieve-desc">Participated in Trunk or Treat events junior and senior year — giving back to the school community and connecting with younger students.</div>
+        <div class="achieve-year">2024–25</div>
+      </div>
+
+      <!-- ✏️ ACHIEVEMENT 6 — add your own or leave as placeholder -->
+      <div class="achieve-card" style="background: var(--green-light); color: var(--green);">
+        <div class="achieve-icon">🌌</div>
+        <div class="achieve-label">STEM Project</div>
+        <div class="achieve-title">Solar System Design</div>
+        <div class="achieve-desc">Collaborated in a group to design a fully functioning solar system — including an economy, food source, planetary laws, and government structure.</div>
+        <div class="achieve-year">2022–23</div>
       </div>
 
     </div>
@@ -606,43 +275,58 @@
     <div class="class-grid">
       <div class="class-card">
         <div class="class-dot" style="background: var(--purple);"></div>
-        <div class="class-name">AP Biology</div>
-        <div class="class-type">Advanced Placement · Science</div>
+        <div class="class-name">AP Human Geography</div>
+        <div class="class-type">Advanced Placement · Social Studies</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--teal);"></div>
-        <div class="class-name">AP Chemistry</div>
-        <div class="class-type">Advanced Placement · Science</div>
-      </div>
-      <div class="class-card">
-        <div class="class-dot" style="background: var(--amber);"></div>
-        <div class="class-name">AP Calculus BC</div>
+        <div class="class-name">AP Precalculus</div>
         <div class="class-type">Advanced Placement · Math</div>
       </div>
       <div class="class-card">
-        <div class="class-dot" style="background: var(--pink);"></div>
-        <div class="class-name">AP Computer Science A</div>
-        <div class="class-type">Advanced Placement · Technology</div>
-      </div>
-      <div class="class-card">
-        <div class="class-dot" style="background: var(--blue);"></div>
+        <div class="class-dot" style="background: var(--amber);"></div>
         <div class="class-name">AP Statistics</div>
         <div class="class-type">Advanced Placement · Math</div>
       </div>
       <div class="class-card">
+        <div class="class-dot" style="background: var(--pink);"></div>
+        <div class="class-name">AP Calculus AB</div>
+        <div class="class-type">Advanced Placement · Math</div>
+      </div>
+      <div class="class-card">
+        <div class="class-dot" style="background: var(--blue);"></div>
+        <div class="class-name">AP Calculus BC</div>
+        <div class="class-type">Advanced Placement · Math</div>
+      </div>
+      <div class="class-card">
         <div class="class-dot" style="background: var(--coral);"></div>
-        <div class="class-name">AP Physics C</div>
-        <div class="class-type">Advanced Placement · Science</div>
+        <div class="class-name">AP Literature</div>
+        <div class="class-type">Advanced Placement · English</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--green);"></div>
-        <div class="class-name">Environmental Science</div>
-        <div class="class-type">Honors · Science</div>
+        <div class="class-name">AP Language & Composition</div>
+        <div class="class-type">Advanced Placement · English</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: #7F77DD;"></div>
-        <div class="class-name">Engineering Design</div>
-        <div class="class-type">Elective · Engineering</div>
+        <div class="class-name">AP Biology</div>
+        <div class="class-type">Advanced Placement · Science</div>
+      </div>
+      <div class="class-card">
+        <div class="class-dot" style="background: var(--pink);"></div>
+        <div class="class-name">AP Seminar</div>
+        <div class="class-type">Advanced Placement · Research</div>
+      </div>
+      <div class="class-card">
+        <div class="class-dot" style="background: var(--teal);"></div>
+        <div class="class-name">AP Research</div>
+        <div class="class-type">Advanced Placement · Research</div>
+      </div>
+      <div class="class-card">
+        <div class="class-dot" style="background: var(--amber);"></div>
+        <div class="class-name">AP Computer Science</div>
+        <div class="class-type">Advanced Placement · Technology</div>
       </div>
     </div>
   </div>
@@ -652,35 +336,35 @@
 <section class="timeline-section" id="timeline">
   <div class="timeline-inner">
     <div class="section-tag" style="background: var(--coral-light); color: var(--coral);">My Journey</div>
-    <h2 class="section-title">Four Years of<br><em style="color: var(--coral);">Growth</em></h2>
+    <h2 class="section-title">My High School<br><em style="color: var(--coral);">Journey</em></h2>
     <div class="timeline">
 
       <div class="timeline-item">
         <div class="timeline-dot" style="color: var(--pink); background: var(--pink);"></div>
-        <div class="timeline-year" style="color: var(--pink);">Freshman Year · 2022</div>
-        <div class="timeline-event">Found my passion for STEM</div>
-        <div class="timeline-desc">Enrolled in Honors Biology and discovered a love for research. Joined Math League and placed in the top 5 at my first competition.</div>
+        <div class="timeline-year" style="color: var(--pink);">Freshman Year · 2022–23</div>
+        <div class="timeline-event">Finding My Path</div>
+        <div class="timeline-desc">Joined the Sprayberry STEM program and completed my first AP class. Worked on a group solar system design project and started learning what a career in CS could look like. Worked summers at my dad's design shop learning car wrapping and signage.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot" style="color: var(--purple); background: var(--purple);"></div>
-        <div class="timeline-year" style="color: var(--purple);">Sophomore Year · 2023</div>
-        <div class="timeline-event">Leadership & Competition</div>
-        <div class="timeline-desc">Founded the STEM Club, joined Science Olympiad, and was inducted into National Honor Society. Started learning Python independently.</div>
+        <div class="timeline-year" style="color: var(--purple);">Sophomore Year · 2023–24</div>
+        <div class="timeline-event">Building & Competing</div>
+        <div class="timeline-desc">Took on the garage build competition, toured tech companies with my cousin Allison, and joined TSA. Continued stacking AP courses and deepening my passion for computer engineering.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot" style="color: var(--teal); background: var(--teal);"></div>
-        <div class="timeline-year" style="color: var(--teal);">Junior Year · 2024</div>
-        <div class="timeline-event">Research & Real Impact</div>
-        <div class="timeline-desc">Won regionals in Science Olympiad Chemistry Lab, placed 2nd at Science Fair for my microplastics research, and launched a school resource app.</div>
+        <div class="timeline-year" style="color: var(--teal);">Junior Year · 2024–25</div>
+        <div class="timeline-event">Leveling Up</div>
+        <div class="timeline-desc">Competed in another design and build challenge, participated in Trunk or Treat, earned my AP Scholar distinction, and was inducted into the National Honor Society. Committed to KSU for Computer Engineering.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot" style="color: var(--amber); background: var(--amber);"></div>
-        <div class="timeline-year" style="color: var(--amber);">Senior Year · 2025–2026</div>
+        <div class="timeline-year" style="color: var(--amber);">Senior Year · 2025–26</div>
         <div class="timeline-event">Looking Ahead</div>
-        <div class="timeline-desc">Applying to top universities for biomedical engineering and computer science. Planning a capstone research project on AI in healthcare diagnostics.</div>
+        <div class="timeline-desc">Wrapping up high school strong — participating in Trunk or Treat one last time, finishing AP Research, and getting ready for Kennesaw State University to study Computer Engineering.</div>
       </div>
 
     </div>
@@ -689,9 +373,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name">Your Name</div>
-  <p>High School Student · STEM Enthusiast · Future Engineer</p>
-  <div class="footer-tag">✦ Class of 2026</div>
+  <div class="footer-name">Maddox Winchester</div>
+  <p>Sprayberry STEM · Computer Engineering · Class of '26</p>
+  <div class="footer-tag">✦ Robert "Maddox" Winchester</div>
 </footer>
 
 </body>
