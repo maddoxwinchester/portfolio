@@ -138,6 +138,7 @@
   .class-type { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
   .class-project-placeholder { width: 100%; height: 100px; border-radius: 10px; background: var(--purple-light); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; color: var(--purple); font-size: 0.75rem; font-weight: 600; margin-top: 0.75rem; opacity: 0.7; }
   .class-project-placeholder .ph-icon { font-size: 1.5rem; }
+  .class-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-top: 0.5rem; }
   /* CLUBS */
   .clubs { background: var(--bg); }
   .clubs-inner { max-width: 1100px; margin: 0 auto; }
@@ -170,6 +171,23 @@
   .research-block-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 900; margin-bottom: 0.6rem; }
   .research-block-text { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
   .seminar-card { background: var(--card-bg); border-radius: 16px; padding: 1.75rem; border: 1.5px solid var(--border); margin-top: 1rem; }
+  /* STEM ACADEMICS */
+  .stem-academics { background: var(--bg); }
+  .stem-academics-inner { max-width: 1100px; margin: 0 auto; }
+  .stem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+  .stem-entry { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1.5px solid var(--border); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+  .stem-entry:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+  .stem-entry-photo { width: 100%; height: 200px; object-fit: cover; display: block; }
+  .stem-entry-photo-placeholder { width: 100%; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; }
+  .stem-entry-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+  .stem-entry-tag { display: inline-block; align-self: flex-start; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.7rem; }
+  .stem-entry-title { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 900; margin-bottom: 0.3rem; line-height: 1.25; }
+  .stem-entry-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.85rem; }
+  .stem-entry-reflection { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+  /* STEM BEYOND THE CLASSROOM */
+  .stem-beyond { background: var(--section-bg); }
+  .stem-beyond-inner { max-width: 1100px; margin: 0 auto; }
+  .beyond-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
   .photos { background: var(--bg); }
   .photos-inner { max-width: 1100px; margin: 0 auto; }
   .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
@@ -206,9 +224,11 @@
     <li><a href="#about">About</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#classes">Courses</a></li>
+    <li><a href="#stem-academics">Projects</a></li>
     <li><a href="#clubs">Clubs</a></li>
     <li><a href="#volunteer">Volunteer</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#stem-beyond">Beyond</a></li>
     <li><a href="#photos">Photos</a></li>
     <li><a href="#timeline">Journey</a></li>
   </ul>
@@ -373,68 +393,121 @@
         <div class="class-dot" style="background: var(--purple);"></div>
         <div class="class-name">AP Human Geography</div>
         <div class="class-type">Advanced Placement · Social Studies</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Took this freshman year. We learned about populations, cultures, and how all that stuff connects across the world. Pretty interesting, lots of vocab.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--teal);"></div>
         <div class="class-name">AP Precalculus</div>
         <div class="class-type">Advanced Placement · Math</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Just functions, trig, and getting ready for calc. Tough at first but it clicked. Wish I took it closer to taking Calc AB.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--amber);"></div>
         <div class="class-name">AP Statistics</div>
         <div class="class-type">Advanced Placement · Math</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">All about data and probability. Fun class that let me connect math to real life.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--pink);"></div>
         <div class="class-name">AP Calculus AB</div>
         <div class="class-type">Advanced Placement · Math</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Hard class but it's pretty cool once you get how it works. Lots of practice, but I had a lot of fun with it once it clicked.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--blue);"></div>
         <div class="class-name">AP Calculus BC</div>
         <div class="class-type">Advanced Placement · Math</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Basically AB but faster and with more topics. Series, polar stuff, parametric equations. Very hard math class.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--coral);"></div>
         <div class="class-name">AP Literature</div>
         <div class="class-type">Advanced Placement · English</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Read a bunch of novels and poetry and wrote a lot of essays. Made me way better at writing under pressure.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--green);"></div>
         <div class="class-name">AP Language and Composition</div>
         <div class="class-type">Advanced Placement · English</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">More writing, more arguments, more analyzing how authors say things. Helped a ton with essays in every other class.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: #7F77DD;"></div>
         <div class="class-name">AP Biology</div>
         <div class="class-type">Advanced Placement · Science</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Cells, genetics, ecosystems, evolution. Tons of labs which made it actually fun. One of my favorites.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--pink);"></div>
         <div class="class-name">AP Seminar</div>
         <div class="class-type">Advanced Placement · Research</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">First year of Capstone. We worked in groups, researched random topics, and gave a lot of presentations. Very helpful in preparing for AP Research.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--teal);"></div>
         <div class="class-name">AP Research</div>
         <div class="class-type">Advanced Placement · Research</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">Year-long independent project. I picked my own topic, did all the research, and wrote a full paper on it. A lot of work but super rewarding in the end.</div>
       </div>
       <div class="class-card">
         <div class="class-dot" style="background: var(--amber);"></div>
         <div class="class-name">AP Computer Science</div>
         <div class="class-type">Advanced Placement · Technology</div>
-        <div class="class-project-placeholder"><span class="ph-icon">🖼️</span><span>Project coming soon</span></div>
+        <div class="class-desc">I learned how to code, something I wish I did a little more of in high school, as that's definitely something I think about doing in the future.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STEM ACADEMICS -->
+<section class="stem-academics" id="stem-academics" style="padding: 6rem 2rem;">
+  <div class="stem-academics-inner">
+    <div class="section-tag" style="background: var(--green-light); color: #3B6D11;">STEM Academics</div>
+    <h2 class="section-title">Projects from<br><em style="color: var(--green);">Each Content Area</em></h2>
+    <p style="font-size: 1rem; color: var(--muted); max-width: 720px; margin-bottom: 2.5rem; line-height: 1.7;">One outstanding project per STEM content area each year — Math, Science, and Pathway. Each one comes with a date, the class, a photo, and a reflection on what I took away from it.</p>
+
+    <div class="stem-grid">
+
+      <!-- MATH -->
+      <div class="stem-entry">
+        <div class="stem-entry-photo-placeholder" style="background: var(--blue-light); color: var(--blue);">
+          <span style="font-size:2rem">📸</span>
+          <span>Egg Drop photo coming soon</span>
+        </div>
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--blue-light); color: #185FA5;">Math</span>
+          <div class="stem-entry-title">Paper Egg Drop Challenge</div>
+          <div class="stem-entry-meta">Honors Physics · 1st Semester · 11th Grade · Fall 2024</div>
+          <p class="stem-entry-reflection">Extra credit project where we had to drop an egg from 4 meters using only a limited weight of paper materials. The math side was the fun part — figuring out drop time, terminal velocity, and how surface area changes air resistance to slow the fall enough that the impact wouldn't crack the shell. Once the calculations made sense the design pretty much wrote itself. Honestly one of the projects where I felt math actually clicked for me — it stopped being abstract and became the tool that solved the problem.</p>
+        </div>
+      </div>
+
+      <!-- SCIENCE -->
+      <div class="stem-entry">
+        <div class="stem-entry-photo-placeholder" style="background: var(--pink-light); color: #993556;">
+          <span style="font-size:2rem">📸</span>
+          <span>Miracle Berry lab photo coming soon</span>
+        </div>
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--pink-light); color: #993556;">Science</span>
+          <div class="stem-entry-title">Miracle Berry Taste Lab</div>
+          <div class="stem-entry-meta">AP Biology · 2nd Semester · 11th Grade · Spring 2025</div>
+          <p class="stem-entry-reflection">In bio we did a lab where we ate miracle berry pills that mess with your taste receptors, then tried a bunch of sour and sweet stuff to see how it changed. The pill has a protein called miraculin that binds to your sweet receptors but only activates them when something acidic hits your tongue, so sour foods end up tasting sweet. Lemons were my favorite — I literally ate the peels. It was a fun way to actually see how taste works at a molecular level instead of just reading about it.</p>
+        </div>
+      </div>
+
+      <!-- PATHWAY -->
+      <div class="stem-entry">
+        <img src="garage-build.jpg" class="stem-entry-photo" alt="Garage Build">
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--amber-light); color: #854F0B;">Pathway</span>
+          <div class="stem-entry-title">TSA Garage Build</div>
+          <div class="stem-entry-meta">TSA Engineering · Late 1st Semester · 10th Grade · Fall 2023</div>
+          <p class="stem-entry-reflection">Built a working model garage that opened and closed using only a limited set of materials and had to stay under a certain weight. The challenge was keeping the structure light enough but still functional. A lot of it came down to teamwork — splitting up the design, build, and testing. We placed 4th in the state, which felt huge. It taught me how to balance constraints in a real engineering problem and how much faster things go when a team actually communicates.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -463,7 +536,7 @@
         <div class="club-name">TSA</div>
         <div class="club-years">Sophomore &amp; Junior · 2023–25</div>
         <div class="club-desc">Technology Student Association member for two years. Competed in state-level engineering challenges including the Garage Build (4th place, state) and the Storm Structure Build. Also participated in Trunk or Treat 2024 as part of TSA, volunteering at the school event. TSA sharpened my skills in design, problem-solving, and working under pressure.</div>
-        <img src="teams-build.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:12px; display:block;">
+        <img src="storm-structure.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:12px; display:block;">
       </div>
 
       <div class="club-card" style="border-top: 4px solid var(--amber);">
@@ -496,11 +569,7 @@
     <div class="vol-grid">
 
       <div class="vol-card">
-        <div class="vol-photo-placeholder" style="background: var(--blue-light); color: var(--blue);">
-          <span style="font-size:2rem">📸</span>
-          <span>Photo coming soon</span>
-          <span style="opacity:0.5; font-size:0.7rem">Upload your Trunk or Treat pic here</span>
-        </div>
+        <img src="trunk-or-treat-2024.jpg" style="width:100%; height:180px; object-fit:cover; display:block;">
         <div class="vol-body">
           <div class="vol-title">Trunk or Treat</div>
           <div class="vol-meta">2024 · With TSA · Sprayberry High School</div>
@@ -561,6 +630,68 @@
 
   </div>
 </section>
+
+
+<!-- STEM BEYOND THE CLASSROOM -->
+<section class="stem-beyond" id="stem-beyond" style="padding: 6rem 2rem;">
+  <div class="stem-beyond-inner">
+    <div class="section-tag" style="background: var(--purple-light); color: var(--purple);">Beyond the Classroom</div>
+    <h2 class="section-title">STEM Connections<br><em style="color: var(--purple);">Outside of School</em></h2>
+    <p style="font-size: 1rem; color: var(--muted); max-width: 720px; margin-bottom: 2.5rem; line-height: 1.7;">Conversations and experiences with people working in STEM fields. Each one is a chance to learn what these careers actually look like beyond the classroom.</p>
+
+    <div class="beyond-grid">
+
+      <!-- ALLISON -->
+      <div class="stem-entry">
+        <img src="allison-apollo.jpg" class="stem-entry-photo" alt="With Allison at the Apollo Theater">
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--purple-light); color: #534AB7;">Tech Industry</span>
+          <div class="stem-entry-title">Allison · Cousin in Tech</div>
+          <div class="stem-entry-meta">Visited in NY · Summer 2024</div>
+          <p class="stem-entry-reflection">My cousin Allison has worked at companies like Microsoft and most recently at a 3D printing company in New York. I got to spend time with her on a trip to NY where she shared what tech careers really look like — the day to day, the kinds of problems she works on, and how different roles fit together at a company that size. The biggest connection I made was seeing how Computer Engineering doesn't just mean writing code in a cubicle. It can mean working on physical hardware, manufacturing, and design — which is exactly the kind of mix I'm interested in for college and beyond.</p>
+        </div>
+      </div>
+
+      <!-- MONA WADE -->
+      <div class="stem-entry">
+        <img src="mona-wade.jpg" class="stem-entry-photo" alt="Mona Wade STEMinar">
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--blue-light); color: #185FA5;">STEMinar Speaker</span>
+          <div class="stem-entry-title">Mona Wade · Software Engineer at Microsoft</div>
+          <div class="stem-entry-meta">Sprayberry STEM Speaker Series</div>
+          <p class="stem-entry-reflection">Mona Wade came to one of our STEMinars to talk about her work as a software engineer at Microsoft. She walked us through what her day to day actually looks like — collaborating across teams, working on real products at scale, and the path she took to get there. The biggest takeaway for me was how much software engineering is about communication and problem-solving, not just code. As someone going into Computer Engineering, hearing from someone in the field at a top company made the path feel a lot more real and reachable.</p>
+        </div>
+      </div>
+
+      <!-- GRANDMA / APPRAISAL -->
+      <div class="stem-entry">
+        <div class="stem-entry-photo-placeholder" style="background: var(--coral-light); color: var(--coral);">
+          <span style="font-size:2rem">📸</span>
+          <span>Appraisal work photo coming soon</span>
+        </div>
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--coral-light); color: #993C1D;">Real Estate &amp; Data</span>
+          <div class="stem-entry-title">Grandma · House Appraiser</div>
+          <div class="stem-entry-meta">Summer 2025 · On-the-job experience</div>
+          <p class="stem-entry-reflection">I spent the most recent summer working with my grandma, who's a house appraiser. I got to do a little of everything — measuring properties, looking up comparable sales, and driving her to appointments. I even went to a networking event called Brews and Views where appraisers, agents, and homeowners connect and pitch houses. The STEM connection was bigger than I expected. Appraisal is built on data — collecting accurate measurements, analyzing market comps, and making valuations based on patterns. It showed me that careful data work and clear analysis aren't just an engineering thing. They're the foundation of a lot of professions.</p>
+        </div>
+      </div>
+
+      <!-- COBB GALLERIA FIELD TRIP -->
+      <div class="stem-entry">
+        <img src="hopper-shuttle.jpg" class="stem-entry-photo" alt="Hopper autonomous shuttle at Cobb Galleria">
+        <div class="stem-entry-body">
+          <span class="stem-entry-tag" style="background: var(--teal-light); color: var(--teal);">STEM Field Trip</span>
+          <div class="stem-entry-title">Cobb Galleria · Autonomous Shuttle Demo</div>
+          <div class="stem-entry-meta">April 23, 2024 · Sprayberry STEM Field Trip</div>
+          <p class="stem-entry-reflection">Took a STEM field trip to Cobb Galleria Centre to learn about the Cumberland Sweep program and ride the Hopper, an autonomous shuttle running through the Cumberland district. Seeing self-driving tech in person was wild. The shuttle uses sensors, mapping, and real-time decision making to navigate without a driver. It made the connection clear between what I'm studying and where the industry is actually heading. Self-driving vehicles are basically a giant computer engineering problem on wheels — software, hardware, sensors, and safety systems all working together. Definitely one of those days that made me more excited about going into Computer Engineering.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- PHOTOS -->
 <!-- ============================================================
